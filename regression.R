@@ -15,6 +15,7 @@ data <- mutate(data, 総原価 = data$売上原価 + data$販管費)
 glimpse(data)
 
 #ggolot2パッケージで可視化
+library(ggplot2)
 g <- ggplot(data = data, mapping = aes(x = 売上高, y = 総原価)) + geom_point()
 g <- g + theme_gray (base_family = "HiraKakuPro-W3") #（macのみ）日本語の文字化け防止．
 g <- g + xlim(0, max(data$売上高)) + ylim(0, max(data$総原価)) #両軸の設定
